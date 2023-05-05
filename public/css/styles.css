@@ -1,0 +1,735 @@
+/*
+    Color Background: #1C2E37;
+    Color Font: white;
+    Color Gray: #A9ABAE;
+    Color Ally: #3D85C6;
+    Color Enemy: #CC4125;
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Abel', sans-serif;
+*/
+
+/* Icon Font */
+
+@font-face {
+    font-family: 'overwatch-picker';
+    src:  url('../fonts/overwatch-picker.eot?ta4nt5');
+    src:  url('../fonts/overwatch-picker.eot?ta4nt5#iefix') format('embedded-opentype'),
+      url('../fonts/overwatch-picker.ttf?ta4nt5') format('truetype'),
+      url('../fonts/overwatch-picker.woff?ta4nt5') format('woff'),
+      url('../fonts/overwatch-picker.svg?ta4nt5#overwatch-picker') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'overwatch-picker' !important;
+    speak-as: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-escort:before {
+    content: "\e909";
+  }
+  .icon-assault:before {
+    content: "\e90a";
+  }
+  .icon-control:before {
+    content: "\e90b";
+  }
+  .icon-hybrid:before {
+    content: "\e90c";
+  }
+  .icon-bronze:before {
+    content: "\e901";
+  }
+  .icon-diamond:before {
+    content: "\e902";
+  }
+  .icon-gold:before {
+    content: "\e903";
+  }
+  .icon-grand-master:before {
+    content: "\e904";
+  }
+  .icon-master:before {
+    content: "\e905";
+  }
+  .icon-platinum:before {
+    content: "\e906";
+  }
+  .icon-silver:before {
+    content: "\e907";
+  }
+  .icon-top-500:before {
+    content: "\e908";
+  }
+  .icon-menu:before {
+    content: "\e900";
+  }
+
+/* HTML Tags */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template: repeat(4, minmax(100px, auto)) / minmax(320px, 75vw);
+    margin: 0 auto;
+    font-family: 'Abel', sans-serif;
+    color: white;
+    background-color: #1C2E37;
+    column-gap: 20px;
+    width: 75vw;
+}
+
+header{
+    display: grid;
+    justify-content: space-between;
+    justify-items: center;
+    grid-template: repeat(2, 1fr) / 46.2% 43.4%;
+    grid-template-areas: 
+        "header-title header-tip"
+        "header-nav header-nav";
+    margin-top: 1.5em;
+}
+
+h1{
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+}
+
+h2{
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+p{
+    font-family: 'Abel', sans-serif;    
+}
+
+ol{
+    list-style: none;
+}
+
+footer{
+    margin-top: 3.125em;
+    display: grid;
+}
+
+/* Class Tags */
+
+.burger-button{
+    font-size: 2.5em;
+    color: white;
+    position: fixed;
+    left: 0.5em;
+    top: 0.5em;
+    display: none;
+    z-index: 2;
+}
+
+.header-title{
+    grid-area: header-title;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+.header-title{
+    grid-area: header-title;
+}
+
+.header-title h1{
+    font-size: 3.875em;
+    text-transform: uppercase;
+}
+
+.header-title h2{
+    text-align: right;
+    margin-top: -0.5em;
+}
+
+.header-title h2 a{
+    color: rgb(242, 242, 242);
+}
+
+.header-tip{
+    font-family: 'Fjalla One', sans-serif;
+    color: #A9ABAE;
+    grid-area: header-tip;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header-tip p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8125em;
+    color: white;
+    border-bottom: 2px solid white;
+    margin-bottom: 0.5em;
+}
+
+.header-tip-title{
+    font-size: 1.5625em;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-around;
+    border-top: 2px solid white;
+    padding: 20px 0px 40px 0px;
+    grid-area: header-nav;
+    width: 100%;
+}
+
+.header-nav ol{
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-column-gap: 20px;
+}
+
+.header-nav li{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.1875em;
+    text-transform: uppercase;
+}
+
+.hero-text{
+    border-bottom: 2px solid white;
+    margin-bottom: 70px;
+}
+
+.hero-text p{
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.selection-team-title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2.1875em;
+    text-align: center;
+    grid-column: 1 / span 4;
+}
+
+.ally-team{
+    color: #3D85C6;
+}
+
+.enemy-team{
+    color: #CC4125;
+}
+
+.calculator{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.selection-team-clear-all{
+    font-size: 1.875em;
+    text-align: center;
+    margin-bottom: 40px;
+    text-decoration: underline;
+    cursor: pointer;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+}
+
+.selection-team-clear-all a{
+    text-decoration: underline;
+}
+
+.selection-checkbox-panel{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;    
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+}
+
+.selection-checkbox-panel label{
+    margin: auto 1em;
+}
+
+.selection-checkbox-panel input{
+    height: 1.8em;
+    width: 1.8em;
+}
+
+.selection-panel{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.03125em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+}
+
+.selection-panel select{
+    font-family: 'Abel', sans-serif;
+    font-size: 1.05em;
+    background-color: #1C2E37;
+    color: white;
+    height: 1.1em;
+}
+
+.selection-map select{
+    width: 6em;
+}
+
+.heroes-selection{
+    display: grid;
+    grid-template: repeat(6, auto) / 50% 0px 50%;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+
+.heroes-selection-title-text{
+    font-family: 'Abel', sans-serif;
+    font-size: 2.1875em;
+    width: fit-content;
+}
+
+#blue-team-title-text{
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+}
+
+#red-team-title-text{
+    grid-column: 3 / 5;
+    grid-row: 4 / 5;
+}
+
+.teams-composition{
+    display: flex;
+    justify-content: space-between;    
+}
+
+.team-composition{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+#heroes-selected-blue{
+
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+}
+
+#heroes-selected-red{
+
+    grid-column: 3 / 5;
+    grid-row: 5 / 6;
+}
+
+.hero-value{    
+    font-family: 'Abel', sans-serif;
+    font-size: 1.25em;
+    width: 48px;
+    text-align: center;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.no-rotation{
+
+    cursor: initial;
+}
+
+.no-rotation img{
+    
+    /*filter: blur(2.5px);*/
+    filter: invert(90%);
+}
+
+.hero-value img{
+    width: 48px;
+    height: 48px;
+}
+
+.hero-value figcaption{
+    font-size: 0.48em;
+    max-height: 1.5em;
+    margin-left: -3px;
+}
+
+.no-hero-selected{
+    color: #1C2E37;
+    cursor: initial;
+}
+
+.border-bottom-75{
+    border-bottom: white 2px solid;
+    left: 12%;
+    top: 100%;
+    width: 75%;
+    position: absolute;
+}
+
+.hero-value .hero-tip{
+    visibility: hidden;
+    width: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-family: 'Poppins', sans-serif;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.hero-value:hover .hero-tip{
+    visibility: visible;
+}
+
+.heroes-filter{
+    text-align: left;
+    width: fit-content;
+}
+
+#heroes-filter-blue{
+
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
+}
+
+#heroes-filter-red{
+
+    grid-column: 3 / 5;
+    grid-row: 6 / 7;
+}
+
+.heroes-filter input{
+    width: 100px;
+    margin: 10px auto;
+}
+
+.teams-heroes-selection{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+.team-heroes-selection-line-between{
+    width:0px;
+    border-right: 2px solid white;
+    grid-column: 3 / 4;
+    grid-row: 6 / 10; 
+}
+
+.all-rol-selection{
+    margin-top: 10px;
+}
+
+.rol-selection{
+    flex-direction: inherit;
+    align-items: inherit;
+    border-bottom: 2px solid white;
+    margin-bottom: 5px;
+    max-width: 90%;
+    margin-right: auto;
+}
+
+#tank-selection-blue{
+    grid-column: 1 / 3;
+    grid-row: 7 / 8;
+}
+
+#damage-selection-blue{
+    grid-column: 1 / 3;
+    grid-row: 8 / 9;
+}
+
+#support-selection-blue{
+    grid-column: 1 / 3;
+    grid-row: 9 / 10;
+}
+
+#tank-selection-red{
+    grid-column: 3 / 5;
+    grid-row: 7 / 8;
+}
+
+#damage-selection-red{
+    grid-column: 3 / 5;
+    grid-row: 8 / 9;
+}
+
+#support-selection-red{
+    grid-column: 3 / 5;
+    grid-row: 9 / 10;
+}
+
+.rol-selection-support{
+    border-bottom: none;
+}
+
+.rol-icon{
+    display: inline-flex;
+    width: fit-content;
+}
+
+.rol-icon img{    
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.rol-icon figcaption{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.875em;
+}
+
+.heroes-rol-selection{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+}
+
+.enemy-team-selection{
+    display: flex;
+    text-align: right;
+    align-items: flex-end;
+}
+
+.enemy-team-direction{
+    margin-left: auto;
+    grid-column: 3 / span 1;
+    justify-content: flex-end;
+    margin-right: 0;
+    text-align: right;
+}
+
+.footer-nav{
+    display: flex;
+    justify-content: space-around;
+    border-top: 2px solid white;
+    margin-bottom: 65px;
+    grid-column: 1 / span 2;
+}
+
+.footer-nav ol{
+    display: inline-grid;
+    grid-auto-flow: column;
+    column-gap: 1.5em;
+}
+
+.footer-nav li{
+    font-size: 1.5625em;    
+}
+
+.footer-title-section{
+    display: flex;
+    justify-content: space-around;
+    grid-column: 1 / span 2;
+}
+
+.footer-title h1,
+h2{
+    font-family: 'Abel', sans-serif;
+}
+
+.footer-title h1{
+    border-bottom: 2px solid white;
+}
+
+.footer-title h2{
+    text-align: right;    
+}
+
+.footer-title h2 a{
+    color: rgb(242, 242, 242);
+}
+
+.footer-final-line{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-final-line-right{
+    text-align: right;
+}
+
+.footer-social-links{
+    text-align: center;
+    grid-column: 1 / span 2;
+    margin-top: 32px;
+}
+
+.footer-social-links img{
+    width: 3em;
+    height: 3em;
+}
+
+/*
+Tier Section
+*/
+
+.tiers-text a{
+    text-decoration: underline;
+}
+
+.tiers-section{
+    margin: auto 15%;
+}
+
+.tiers-section h2, h3{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.tiers-section a{
+    text-decoration: underline;
+}
+
+.tiers-section h2{
+    text-align: center;
+    font-size: 2em;
+    border-top: white 4px solid;
+}
+
+.tiers-section table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tiers-section tr:nth-child(odd){
+    background-color: #294452;
+}
+
+.tiers-section thead tr{
+    color:#1C2E37;
+   background-color: white  !important;
+}
+
+.tiers-section td{
+    border-collapse: collapse;
+    padding: 0.25em;
+}
+
+.tiers-section td:not(:first-child){
+    border-left: 3px white solid
+}
+
+.tiers-section td p{
+    text-align: center;
+}
+
+.tiers-section td h4{
+    font-size: 1.25em;
+}
+
+.tiers-section td img{
+    width: 4em
+}
+
+.tiers-div{
+    margin-bottom: 2em;
+}
+
+.tiers-div-desc{
+    text-align: left !important;
+}
+
+.tiers-tier-s-h2{
+    color: #57bb8a
+}
+
+.tiers-tier-a-h2{
+    color: #b7e1cd
+}
+
+.tiers-tier-c-h2{
+    color: #f4cccc
+}
+
+.tiers-tier-d-h2{
+    color: #e67c73
+}
+
+/*
+About Section
+*/
+
+.about-text a{
+    text-decoration: underline;
+}
+
+.about-section{
+    margin: auto 15%;
+}
+
+.about-section h2{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.about-section a{
+    text-decoration: underline;
+}
+
+.about-div{
+    border-bottom: white 2px dashed;
+    margin-bottom: 2em;
+}
+
+/*
+Sources Section
+*/
+
+.sources-text a{
+    text-decoration: underline;
+}
+
+.sources-section{
+    margin: auto 15%;
+}
+
+.sources-section h2{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.sources-section a{
+    text-decoration: underline;
+}
+
+.sources-div{
+    border-bottom: white 2px dashed;
+    margin-bottom: 2em;
+}

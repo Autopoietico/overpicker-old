@@ -1,0 +1,288 @@
+
+/* Media Queries */
+
+@media screen and (max-width: 1062px){
+
+    body{
+        grid-template: repeat(4, minmax(100px, auto)) / minmax(320px,95vw);
+        width: 95vw;
+    }
+
+    .selection-tier select{
+        max-width: initial;
+    }
+
+    .selection-map select{
+        max-width: initial;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    header{
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media screen and (max-width: 910px){
+    header{
+        justify-content: center;
+        justify-items: center;
+        grid-template: repeat(3, 1fr) / 100%;
+        grid-template-areas: "header-title"
+                             "header-tip"
+                             "header-nav";
+    }
+}
+
+@media screen and (max-width: 823px){
+    .options-selection{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .selection-panel{
+        flex-direction: column;
+    }
+
+    .selection-checkbox-panel{
+        font-size: 1.125em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .selection-checkbox-panel label{
+        margin: 0;
+    }
+
+    .selection-tier select{
+        max-width: 100px;
+    }
+
+    .selection-map select{
+        max-width: 100px;
+    }
+}
+
+@media screen and (max-width: 779px){
+
+    .heroes-selection-title-text{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .heroes-selection-title-text.enemy-team-direction{
+        flex-direction: column-reverse;
+    }
+
+    .heroes-selection-title-separator{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 682px){
+    .footer-nav{
+        margin-bottom: 32.5px;
+    }
+    .footer-nav ol{
+        margin-top: 20px;
+        grid-auto-flow: initial;
+    }
+}
+
+@media screen and (max-width: 643px){
+
+    .burger-button{
+        display: block;
+    }
+
+    header{
+        grid-template: repeat(2, 1fr) / 100%;
+        grid-template-areas:
+            "header-title"
+            "header-tip";
+    }
+
+    .header-nav{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -100vw;
+        width: 100vw;
+        background: rgba(28,44,55,.8);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        padding: 1em 0 1em 0;
+        border: none;
+    }
+
+    .header-nav.is-active{
+        left: 0;
+    }
+
+    .header-nav ol{
+        grid-auto-flow: initial;
+        column-gap: 0.5em;
+        text-align: center;
+    }
+
+    .hero-text{
+        border-top: 2px solid white;
+        margin-top: 20px;
+    }    
+}
+
+@media screen and (max-width: 550px){
+    header{
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 455px){
+    .header-title h1{
+        font-size: 2.7em;
+    }
+
+    .header-title h2{
+        font-size: 1.045em;
+    }
+
+    .header-tip-title{
+        font-size: 1.09em;
+    }
+
+    .header-tip p{
+        font-size: 0.566em;
+    }
+
+    .hero-text{
+        margin-bottom: 35px;
+    }
+
+    .hero-text p{
+        font-size: 1.74em;
+    }
+
+    .options-selection{
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(6, auto);
+    }
+
+    .calculator{
+
+        grid-template-columns: 1fr;
+    }
+
+    .selection-checkbox-panel{
+        font-size: 2em;
+        grid-column: initial;
+        grid-row: initial;
+    }
+
+    .selection-checkbox-panel label {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .selection-team-title{
+        grid-column: initial;
+        font-size: 1.524em;
+    }
+
+    .selection-team-clear-all{
+        grid-column: initial;
+        font-size: 1.3065em;
+        margin-bottom: 20px;
+    }
+
+    .selection-panel{
+        width: initial;
+        font-size: 1.415em;
+        display: initial;
+        margin: 0;
+        grid-column: initial;
+        grid-row: initial;
+    }
+
+    .selection-panel select{
+        max-width: initial;
+        width: 100%;
+    }
+
+    .heroes-selection{
+        grid-template: repeat(12, auto) / 100%;
+        justify-content: initial;
+    }
+
+    .heroes-selection-title-text{
+        display: initial;
+        flex-direction: initial;
+        height: fit-content;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.524em;
+        grid-column: initial !important;
+        grid-row: initial !important;
+    }
+
+    .heroes-selection-title-separator{
+        display: initial;
+    }
+
+    .team-heroes-selection-line-between{
+        display: none;
+    }
+
+    .team-composition{
+
+        grid-column: initial !important;
+        grid-row: initial !important;
+    }
+
+    .heroes-filter{
+
+        grid-column: initial !important;
+        grid-row: initial !important;
+    }
+
+    .rol-selection{
+
+        grid-column: initial !important;
+        grid-row: initial !important;
+    }
+
+    .hero-value{
+        font-size: 1.09em;
+        width: 41.8px;
+    }
+
+    .hero-value img{
+        height: 41.8px;
+        width: 41.8px;
+    }
+
+    .rol-icon img{
+        width: 27.87px;
+        height: 27.87px;
+    }
+
+    .rol-icon figcaption{
+        font-size: 1.306em;
+    }
+
+    .enemy-team-direction{
+        margin-left: 0;
+        grid-column: unset;
+        justify-content: left;
+    }
+
+    .rol-selection-support{
+        border-bottom: 2px solid white;
+    }
+
+    .rol-selection-support.enemy-team-direction{
+        border-bottom: none;
+    }
+}
